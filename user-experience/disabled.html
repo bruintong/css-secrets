@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>disabled</title>
+  <style>
+    :disabled, [disabled], [aria-disabled="true"] {
+      cursor: not-allowed;
+    }
+    .hide-cursor {
+      width: 500px;
+      height: 500px;
+      background-color: greenyellow;
+      cursor: url('transparent.gif');
+      cursor: none;
+    }
+  </style>
+</head>
+<body>
+  <button>Button</button>
+  <button disabled>Disabled button</button>
+  <div class="hide-cursor"></div>
+</body>
+</html>

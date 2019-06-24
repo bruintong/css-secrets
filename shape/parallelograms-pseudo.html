@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>parallelograms pseudo</title>
+  <style>
+    .button {
+      position: relative;
+      display: inline-block;
+      padding: .5em 1em;
+      border: 0; margin: .5em;
+      background: transparent;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font: bold 200%/1 sans-serif;
+    }
+
+    .button::before {
+      content: ''; /* To generate the box */
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      background: #58a;
+      transform: skew(45deg);
+    }
+  </style>
+</head>
+<body>
+  <a href="#yolo" class="button"><div>Click me</div></a>
+  <button class="button"><div>Click me</div></button>
+</body>
+</html>

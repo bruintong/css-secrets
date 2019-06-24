@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>pie svg</title>
+  <style>
+    .pie {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 10px;
+      transform: rotate(-90deg);
+    }
+
+    svg {
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+
+    circle {
+      fill: yellowgreen;
+      stroke: #655;
+      stroke-width: 32;
+    }
+
+    @keyframes grow { to { stroke-dasharray: 100 100 } }
+
+    .pie.animated circle {
+      animation: grow 2s infinite linear;
+    }
+  </style>
+</head>
+<body>
+  <div class="pie">20%</div>
+  <div class="pie">60%</div>
+  <div class="pie animated">0%</div>
+  <script>
+    function $$(selector, context) {
+      context = context || document;
+      var elements = context.querySelectorAll(selector);
+      return Array.prototype.slice.call(elements);
+    } 
+
+    $$('.pie').forEach(function(pie) {
+      var p = parseFloat(pie.textContent);
+      var NS = "http://www.w3.org/2000/svg";
+      var svg = document.createElementNS(NS, "svg");
+      var circle = document.createElementNS(NS, "circle");
+      var title = document.createElementNS(NS, "title");
+      
+      circle.setAttribute("r", 16);
+      circle.setAttribute("cx", 16);
+      circle.setAttribute("cy", 16);
+      circle.setAttribute("stroke-dasharray", p + " 100");
+      
+      svg.setAttribute("viewBox", "0 0 32 32");
+      title.textContent = pie.textContent;
+      pie.textContent = '';
+      svg.appendChild(title);
+      svg.appendChild(circle);
+      pie.appendChild(svg);
+    });
+  </script>
+</body>
+</html>

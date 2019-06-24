@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>stroked text</title>
+  <style>
+    h1 {
+      margin: 0;
+      color: white;
+    }
+
+    h1:first-child { text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black; }
+
+    h1 text { fill: currentColor }
+    h1 use {
+      stroke: black; 
+      stroke-width: 6;
+      stroke-linejoin: round;
+    }
+
+    body {
+      background: deeppink;
+      font: bold 200%/1 Rockwell, serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS</h1>
+  <h1><svg overflow="visible" width="2em" height="1.2em"><use xlink:href="#css" /><text id="css" y="1em">CSS</text></svg></h1>
+</body>
+</html>

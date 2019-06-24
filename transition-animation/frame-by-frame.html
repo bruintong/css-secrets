@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>frame by frame</title>
+  <style>
+    @keyframes loader {
+      to { 
+        background-position: -800px 0;
+      }
+    }
+
+    .loader {
+      width: 100px; 
+      height: 100px;
+      text-indent: 999px; 
+      overflow: hidden; /* Hide text */
+      background: url("../assets/loader.png") 0 0;
+      animation: loader 1s infinite steps(8);
+    }
+  </style>
+</head>
+<body>
+    <div class="loader">Loading…</div>
+</body>
+</html>

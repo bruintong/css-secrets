@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    dialog::backdrop {
+      background: rgba(0,0,0,.8)
+    }
+  </style>
+</head>
+<body>
+  <!-- dialog标签，目前只有chrome Safari 支持 -->
+  <button onclick="document.querySelector('#modal').showModal();">Click me</button>
+  <dialog id="modal">
+  O HAI!
+  <button onclick="this.parentNode.close()">Close</button>
+  </dialog>
+</body>
+</html>

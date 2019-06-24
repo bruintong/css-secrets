@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>continuous image borders</title>
+  <style>
+    div {
+      border: 1em solid transparent;
+      /* background: linear-gradient(white, white) padding-box,
+                  url(../assets/stone-art.jpg) border-box  0 / cover; */
+      background: linear-gradient(white, white), url(../assets/stone-art.jpg);
+      background-size: cover;
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+      /* Styling & enable resize */
+      width: 21em;
+      padding: 1em;
+      overflow: hidden;
+      resize: both;
+      font: 100%/1.6 Baskerville, Palatino, serif;
+    }
+  </style>
+</head>
+<body>
+  <div>Bacon ipsum dolor amet eu adipisicing elit tongue ground round ex fatback proident kielbasa ham hock. Sausage beef beef ribs aliquip t-bone mollit. Quis beef tri-tip sunt, cupim ut magna salami t-bone. Ut laboris bresaola ribeye biltong landjaeger. Chuck pork belly sed sausage.</div>
+</body>
+</html>

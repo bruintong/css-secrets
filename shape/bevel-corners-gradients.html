@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bevel corners gradients</title>
+  <style>
+    div {
+      background: #58a;
+      background: linear-gradient(135deg, transparent 15px, #58a 0) top left,
+                  linear-gradient(-135deg, transparent 15px, #58a 0) top right,
+                  linear-gradient(-45deg, transparent 15px, #58a 0) bottom right,
+                  linear-gradient(45deg, transparent 15px, #58a 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      padding: 1em 1.2em;
+      max-width: 12em;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+
+    /* @mixin beveled-corners ($bg, $tl:0, $tr:$tl, $br:$tl, $bl:$tr) {
+      background: $bg;
+      background: linear-gradient(135deg, transparent $tl, $bg 0) top left,
+                  linear-gradient(225deg, transparent $tr, $bg 0) top right,
+                  linear-gradient(-45deg, transparent $br, $bg 0) bottom right,
+                  linear-gradient(45deg, transparent $bl, $bg 0) bottom left;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+    } */
+
+    @include beveled-corners (#58a, 15px, 5px)
+  </style>
+</head>
+<body>
+  <div>Hey, focus! You’re supposed to be looking at my corners, not reading my text. The text is just placeholder!</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>half ellipse</title>
+  <style>
+    div {
+      display: inline-block;
+      width: 16em;
+      height: 10em;
+      margin: 1em;
+      background: #fb3;
+      border-radius: 50% / 100% 100% 0 0;
+    }
+
+    div:nth-of-type(2) { border-radius: 50% / 0 0 100% 100%; }
+    div:nth-of-type(3) { border-radius: 100% 0 0 100% / 50%; }
+    div:nth-of-type(4) { border-radius: 0 100% 100% 0 / 50%; }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

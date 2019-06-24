@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>folded corner mixin</title>
+  <style lang="scss">
+    @import "compass/css3";
+
+    @mixin folded-corner($background, $size, $angle: 30deg) {
+      
+    position: relative;
+    background: $background; /* Fallback */
+    background: linear-gradient($angle - 180deg, transparent $size, $background 0);
+    border-radius: .5em;
+
+    $x: $size / sin($angle);
+    $y: $size / cos($angle);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) 100% 0 no-repeat;
+      width: $y;
+      height: $x;
+      transform: translateY($y - $x) rotate(2*$angle - 90deg);
+      transform-origin: bottom right;
+      border-bottom-left-radius: inherit;
+      box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+    }
+
+    }
+
+    .note {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: 15em;
+      padding: 2em;
+      margin: 0 1rem;
+      color: white;
+      font: 100%/1.6 Baskerville, Palatino, serif;
+      border-radius: .5em;
+      @include folded-corner(#58a, 1.5em, 25deg);
+    }
+
+    .note + .note {
+      font-size: 130%;
+      @include folded-corner(#655, 2em, 70deg);
+    }
+
+    .note:nth-child(3) {
+      width: 20em;
+      @include folded-corner(yellowgreen, 1.8em, 45deg);
+    }
+
+    body {
+      /* Showcase that the effect supports any backdrop */
+      background: repeating-linear-gradient(-45deg, #ddd 0, #ddd 25%, white 0, white 50%) 0 / 6px 6px;
+      box-sizing: border-box;
+      padding: 1em;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="note">“The only way to get rid of a temptation is to yield to it.”
+      — Oscar Wilde, The Picture of Dorian Gray</div>
+      <div class="note">“The only way to get rid of a temptation is to yield to it.”
+      — Oscar Wilde, The Picture of Dorian Gray</div>
+      <div class="note">“The only way to get rid of a temptation is to yield to it. Resist it, and your soul grows sick with longing for the things it has forbidden to itself, with desire for what its monstrous laws have made monstrous and unlawful.”
+      — Oscar Wilde, The Picture of Dorian Gray</div> 
+      
+      <footer>Like this? There is an <a href="http://smile.amazon.com/CSS-Secrets-Lea-Verou/dp/1449372635" target="_blank">extensive explanation in my book</a>.</footer>
+</body>
+</html>

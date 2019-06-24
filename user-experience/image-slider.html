@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>image slider</title>
+  <style>
+    .image-slider {
+      position:relative;
+      display: inline-block;
+    }
+    .image-slider > div {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      overflow: hidden;
+    }
+    .image-slider img {
+      display: block;
+      user-select: none; 
+    }
+    .image-slider input {
+       position: absolute;
+       left: 0;
+       bottom: 10px;
+       width: 100%;
+       margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-slider">
+    <img src="../assets/adamcatlace-before.jpg" alt="Before" />
+    <img src="../assets/adamcatlace.jpg" alt="After" />
+  </div>
+  <script>
+    function $$(selector, context) {
+      context = context || document;
+      var elements = context.querySelectorAll(selector);
+      return Array.prototype.slice.call(elements);
+    }
+    $$('.image-slider').forEach(function(slider) { // 创建附加的div元素，并用它包住第一个图片元素
+      var div = document.createElement('div');
+      var img = slider.querySelector('img');
+      slider.insertBefore(img, div);
+      div.appendChild(img);
+      // 创建滑块
+      var range = document.createElement('input'); range.type = 'range';
+      range.oninput = function() {
+        div.style.width = this.value + '%'; 
+      };
+      slider.appendChild(range);
+    });
+  </script>
+</body>
+</html>

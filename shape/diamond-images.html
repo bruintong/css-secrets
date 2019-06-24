@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>diamond images</title>
+  <style>
+    .diamond {
+      width: 250px;
+      height: 250px;
+      transform: rotate(45deg);
+      overflow: hidden;
+      margin: 100px;
+    }
+
+    .diamond img {
+      max-width: 100%;
+      transform: rotate(-45deg) scale(1.42);
+      z-index: -1;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="diamond">
+    <img src="../assets/adamcatlace.jpg" />
+  </div>
+</body>
+</html>

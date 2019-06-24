@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>bevel corners clipped</title>
+  <style>
+    div {
+      background: #58a;
+      -webkit-clip-path: 
+        polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+        calc(100% - 20px) 100%,
+        20px 100%, 0 calc(100% - 20px), 0 20px);
+      clip-path:
+          polygon(20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px),
+          calc(100% - 20px) 100%,
+          20px 100%, 0 calc(100% - 20px), 0 20px);
+      
+      padding: 1em 1.2em;
+      max-width: 12em;
+      color: white;
+      font: 150%/1.6 Baskerville, Palatino, serif;
+    }
+  </style>
+</head>
+<body>
+  <div>Hey, focus! You’re supposed to be looking at my corners, not reading my text. The text is just placeholder!</div>
+</body>
+</html>
