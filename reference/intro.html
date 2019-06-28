@@ -138,5 +138,66 @@
       <li><a href="https://www.runoob.com/css3/css3-mediaqueries.html" target="_blank">@media screen and (min-width: 480px)</a></li>
     </ul>
   </section>
+  <section>
+    <h2>基本选择器</h2>
+    <ul>
+      <li>元素选择器</li>
+      <li>类选择器</li>
+      <li>ID选择器</li>
+      <li>通配选择器</li>
+      <li>属性选择器
+        <ul>
+          <li>[attr]：包含attr属性的所以元素</li>
+          <li>[attr=val]：仅选择attr属性被赋值为val的所有元素</li>
+          <li>[attr~=val]：仅选择attr属性包含val值的元素</li>
+          <li>[attr|=val]：选择attr属性的值是val或值以val-开头的元素</li>
+          <li>[attr^=val]：选择attr属性的值以val开头</li>
+          <li>[attr$=val]：选择attr属性的值以val结尾</li>
+          <li>[attr*=val]：选择attr属性的值中包含val元素</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>组合选择器</h2>
+    <ul>
+      <li>相邻兄弟选择器 A + B</li>
+      <li>普通兄弟选择器 A ~ B</li>
+      <li>子选择器 A > B</li>
+      <li>后代选择器 A  B</li>
+    </ul>
+  </section>
+  <section>
+    <h2>伪类</h2>
+    <ul>
+      <li>:active：匹配被用户激活的元素。当用鼠标交互时，代表的是用户按下按键和松开按键之间的时间。这个样式可能会被其他链接相关的伪类覆盖。这些伪类包括:link，:hover和:visible。链接伪类的顺序LVHA顺序：:link -- :visited -- :hover -- :active</li>
+      <li>:checked：表示任何处于选中状态的radio、checkbox、select元素中的option</li>
+      <li>:default：该选择器可以在&lt;button&gt;、&lt;input type="checkbox" &gt;、&lt;input type="radio" &gt;、以及&lt;option&gt;上使用。默认值使用 <strong>:default</strong>伪类表示，可以在一组复选框之间设置默认复选框。</li>
+      <li>:disabled：表示任何被禁用的元素，如果一个元素不能被激活（如选择、点击或接受文本输入）或获取焦点，则该元素处于被禁用状态。</li>
+      <li>:empty：表示没有子元素的元素。子元素可以是元素节点或文本（包括空格）。</li>
+      <li>:first-child：表示一组兄弟元素中的第一个元素。</li>
+      <li>:first-of-type：表示一组兄弟元素中其类型的第一个元素。</li>
+      <li>:focus：表示获得焦点的元素（如：表单输入）。当用户点击或触摸元素或通过键盘的“tab”键选择它时被触发。</li>
+      <li>:hover：</li>
+      <li>:last-child：代表父元素的最后一个子元素。</li>
+      <li>:last-of-type：表示在子元素列表中，最后一个给定类型的元素。</li>
+      <li>:link：用来选中元素当中的链接。</li>
+      <li>:not()：否定伪类，以一个简单的以选择器X为参数的功能性标记函数。</li>
+      <li>:nth-child()</li>
+      <li>:nth-last-child()：基本和<strong>:nth-child</strong>一样，只是从结尾处反序计数，而不是从开头处。</li>
+      <li>:nth-of-type()：这个选择器匹配那些在相同兄弟节点中的位置与模式 an+b 匹配的相同元素。</li>
+      <li>:required：表示任意&lt;input&gt; 元素表示任意拥有required属性的&lt;input&gt;或&lt;textarea &gt;元素使用它. 它允许表单在提交之前容易的展示必填字段并且渲染其外观。</li>
+    </ul>
+  </section>
+  <section>
+    <h2>伪元素</h2>
+    <ul>
+      <li>::after：作为已选中元素的最后一个子元素，通常会配合content属性来为该元素添加装饰内容。</li>
+      <li>::backdrop：任何处于全屏模式的元素下的即刻渲染的盒子（并且在所有其他在堆中的层级更低的元素之上）</li>
+      <li>::before：匹配选中的元素的第一个子元素，常通过 content 属性来为一个元素添加修饰性的内容。</li>
+      <li>::first-line(:first-line)</li>
+      <li>::placeholder：可以选择一个表单元素的占位文本。</li>
+    </ul>
+  </section>
 </body>
 </html>
